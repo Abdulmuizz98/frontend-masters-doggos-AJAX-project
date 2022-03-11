@@ -12,15 +12,26 @@ function AddDoggos(){
         return processingPromise;
     })
     .then(function(processedResponse){
-        console.log(processedResponse);
         const img = document.createElement('img');
         img.src = processedResponse.message;
         img.alt = 'Dog Breed';
+        img.className = "dog-image";
         frame.appendChild(img);
+
+        // appendImage(processedResponse);
     })
 }
 
-const addDogBtn = document.querySelector('.add-doggo')
+const addDogBtn = document.querySelector('.add-doggo');
 addDogBtn.addEventListener('click', AddDoggos);
 
-console.log('This would log first!')
+console.log('This would log first!');
+
+// function appendImage(imageResponse)
+// {
+//     const img = document.createElement('img');
+//     img.src = imageResponse.message;
+//     img.alt = 'Dog Breed';
+//     img.className = "dog-image";
+//     frame.appendChild(img);
+// }

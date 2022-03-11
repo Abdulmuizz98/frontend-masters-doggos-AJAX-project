@@ -1,0 +1,150 @@
+:root{
+    --black: #171717;
+    --gray: #f2f2f2;
+    --dark-gray: #e6e6e6;
+    --blue: #0078d4;
+    --font-size: 1.3rem;
+    --icon-font: 'Bubblegum Sans', cursive;
+    --mono: 'Smooch Sans', sans-serif;
+    --serif: 'Port Lligat Sans', sans-serif;
+}
+*,
+*::after,
+*::before{
+    box-sizing: border-box;
+}
+h1, h2, h3{
+    margin: 0;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    background-color: var(--gray);
+    color: var(--black);
+    font-family: var(--serif);
+}
+
+/*---------- Footer Style -----------*/
+#footer{
+    background-color: var(--dark-gray);
+}
+
+/*---------- Main Style -----------*/
+#page{
+    width: 75vw;
+    margin: 0 auto;
+    background-color: white;
+    height: auto;
+    margin-top: 2rem;
+    padding: 1rem;
+}
+
+#page .doggos{
+    min-height: 50vw;
+    margin: 1rem;
+    padding: 1rem;
+    width: auto;
+    background-color: var(--dark-gray);
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+#page .dog-image{
+    height: 50vw;
+    width: 50vw;
+    margin: 1rem; 
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: var(--gray);
+}
+
+#page .doggos .dog-image:nth-child(even)
+{
+    border-top: 2px solid var(--blue);
+    border-right: 2px solid var(--blue);
+}
+
+#page .doggos .dog-image:nth-child(odd)
+{
+    border-bottom: 2px solid var(--blue);
+    border-left: 2px solid var(--blue);
+}
+#page #about{
+    margin-top: 3rem;
+}
+
+/*---------- Header Style -----------*/
+#header{
+    background-color: white;
+}
+
+#header h1 .icon-text{
+    font-family: var(--icon-font);
+}
+#header nav{
+    border-bottom: 2px solid var(--dark-gray);
+}
+
+#header .nav-container{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+}
+
+
+#header .nav-container li a{
+    display: block;
+    
+}
+#header .nav-container h1:first-child{
+    flex-basis: 100vw;
+    text-align: center;
+    border-bottom: 2px solid var(--dark-gray);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+#header a, #footer a{
+    text-decoration: none;
+    color: var(--black);
+    font-family: var(--mono);  
+    font-size: 120%; 
+}
+#header a:hover:not(.icon-text), #footer a:hover{
+    border-bottom: 2px solid var(--black);  
+}
+#header .links-container{
+    margin:0;
+    padding: 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    list-style-type: none;
+    gap: 1.5rem;
+}
+
+
+/*--------- Footer Styles -------------*/
+#footer .links-container{
+    margin:0;
+    padding: 1rem;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content:  center;
+    align-items: center;
+    /* height: px; */
+    list-style-type: none;
+    gap: 1rem;
+
+}
+#footer a:hover{
+    text-decoration: underline;  
+    color: #444;
+}

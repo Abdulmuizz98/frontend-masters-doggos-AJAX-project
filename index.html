@@ -1,18 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Port+Lligat+Sans&family=Smooch+Sans&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="./styles/style.css">
+    <title>Doggos - HOME</title>
 </head>
 <body>
-    <h1>Dogs</h1>
-    <div class="doggos">
+   <header id="header">
+        <nav class="nav-container">
+            <h1><a href="#" class="icon-text">Doggos</a></h1>
+            
+            <ul class="links-container">
+                <li><a href="#">HOME</a></li>
+                <li><a href="./dogframes.html">FRAMES</a></li>
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="https://github.com/Abdulmuizz98" target="_blank">AUTHOR</a></li>
+                <li><a href="https://github.com/Abdulmuizz98/frontend-masters-doggos-AJAX-project.git" target="_blank">CONTRIBUTE</a></li>
+            </ul>   
+        </nav>
+    </header>
+    <main id="page">
+        <section id="doggos-playground">   
+            <h2>Dogs</h2>
+            <p>Feel free to add some dogs to your frame.</p>
+            <p>There you go!</p>
+            <button class="add-doggo">Add Doggos</button> 
+            <button class="remove-doggo">Remove Last</button> 
+            
+            <div class="doggos">
+                
+            </div>
+            <button class="add-doggo">Add Doggos</button> 
+            <button class="clear-doggos">Clear Frame</button>    
+        </section>
 
-    </div>
-    <button class="add-doggo">Add Doggos</button> 
-        
-    <script src="./doggos.js"></script>
+        <section id="about">
+            <h2>About</h2>
+            <p>An hello world AJAX project inspired by the introduction to Web Development course by Brian Holt.</p>
+            <p>The webpage sends API requests to the dog.ceo API. An API that returns random pictures of dogs.</p>
+        </section>
+            
+    </main>
+    <footer id="footer">
+        <ul class="links-container">
+            <li><a href="#">English (United States)</a></li>
+            <li><a href="#">Theme</a></li>
+            <li><a href="https://github.com/Abdulmuizz98" target="_blank">github</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="https://github.com/Abdulmuizz98/frontend-masters-doggos-AJAX-project.git" target="_blank">Contribute</a></li>
+            <li><a href="#">Privacy & Cookies</a></li>
+            <li><a href="#">Terms of Use</a></li>
+            <li><a href="#">Trademarks</a></li>
+            <li><p>&COPY; Abdulmuizz Hamzat 2022</p></li>
+        </ul>					
+    </footer>
+    <script src="./scripts/doggos.js"></script>
 </body>
 </html>
