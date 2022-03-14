@@ -17,6 +17,9 @@ h1, h2, h3{
     margin: 0;
 }
 
+h2{
+    font-family: var(--icon-font);
+}
 body{
     padding: 0;
     margin: 0;
@@ -29,34 +32,34 @@ body{
     background-color: var(--blue);
     border: none;
     padding: 0.5rem;
-    margin-right: 0.5rem;   
+    font-family: var(--icon-font);
+    cursor: pointer;
+    /* font-weight: bolder; */
 }
-
-/*---------- Footer Style -----------*/
-#footer{
-    background-color: var(--dark-gray);
+.btn:hover{
+    background-color: darkblue;
 }
 
 /*---------- Main Style -----------*/
 #page{
+    max-width: 1024.5px;
     width: 75vw;
     margin: 0 auto;
     background-color: white;
     height: auto;
     margin-top: 2rem;
-    padding: 1rem;
+    padding: 2rem;
 }
 
 #page .doggos, #page .frame-container{
     min-height: 50vw;
-    margin: 1rem;
+    margin: 1rem 0; 
     padding: 1rem;
     width: auto;
     background-color: var(--dark-gray);
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
-    align-items: center;
 }
 #page .dog-image{
     height: 50vw;
@@ -87,13 +90,44 @@ body{
     width: 50vw;
     margin: 1rem; 
     background-color: white;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    column-gap: 0.25rem;
 
 }
 #page .frame .frame-img{
     height: 40vw;
     width: 50vw;
+    flex-basis: 100%;
     background-color: var(--gray);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
 }
+
+#page .frame-btn{
+    
+    padding: 0.25rem;
+    width: 45%;
+    max-width: 120px;
+    max-height: 30px;
+}
+
+#page #help{
+    margin-top: 3rem;
+}
+
+#page #help dt{
+    font-weight: bold;
+}
+#page .amt-to-generate{
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-family: var(--serif);
+
+}
+
 
 /*---------- Header Style -----------*/
 #header{
@@ -117,10 +151,12 @@ body{
     list-style-type: none;
 }
 
-
+#header .nav-container li {
+    padding: 0.25rem;
+    color: white;
+}
 #header .nav-container li a{
     display: block;
-    
 }
 #header .nav-container h1:first-child{
     flex-basis: 100vw;
@@ -149,9 +185,23 @@ body{
     list-style-type: none;
     gap: 1.5rem;
 }
+#header .links-container .active{
+    background-color: var(--blue);
+}
+#header .links-container .active a{
+    color: white;
+}
+#header .links-container .active a:hover{
+    border-bottom: none;
+}
 
 
 /*--------- Footer Styles -------------*/
+
+#footer{
+    background-color: var(--dark-gray);
+}
+
 #footer .links-container{
     margin:0;
     padding: 1rem;
@@ -159,7 +209,6 @@ body{
     flex-flow: row wrap;
     justify-content:  center;
     align-items: center;
-    /* height: px; */
     list-style-type: none;
     gap: 1rem;
 
@@ -168,3 +217,52 @@ body{
     text-decoration: underline;  
     color: #444;
 }
+
+
+/*---------- Media Queries for RWD ----------------*/
+@media screen and (min-width: 850px) {
+    /* 
+        responsive frames
+        bg image cover and others
+    */
+    #page .frame-container{
+        min-height: 30vw;;
+    }
+    #page .frame{
+        height: 30vw;
+        width: 30vw;
+        margin: 1rem 0.25rem; 
+        justify-content: space-evenly;
+    }
+    #page .frame .frame-img{
+        height: 25vw;
+    }
+
+    #header .nav-container h1:first-child{
+        flex-basis: 50%;
+        text-align: left;
+        border-bottom: none;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+    #header .nav-container{
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+}
+@media screen and (min-width: 1200px) {
+    /* responsive frames */
+    #page .frame-container{
+        min-height: 20vw;;
+    }
+    #page .frame{
+        height: 20vw;
+        width: 20vw;
+        margin: 1 rem 0.25rem; 
+    }
+    #page .frame .frame-img{
+        height: 15vw;
+    }
+}
+
