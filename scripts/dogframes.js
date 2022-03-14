@@ -14,7 +14,7 @@ addFramesBtn.addEventListener('click', addFrames);
  * Return: doesn't return anything;
  */
 function addFrames(){
-    const frameAmount = frameAmountSelect.value;
+    const frameAmount = parseInt(frameAmountSelect.value);
 
     for(let i = totalFrames; i < (totalFrames + frameAmount); i++)
     {
