@@ -24,6 +24,13 @@ body{
     color: var(--black);
     font-family: var(--serif);
 }
+.btn{
+    color: white;
+    background-color: var(--blue);
+    border: none;
+    padding: 0.5rem;
+    margin-right: 0.5rem;   
+}
 
 /*---------- Footer Style -----------*/
 #footer{
@@ -40,7 +47,7 @@ body{
     padding: 1rem;
 }
 
-#page .doggos{
+#page .doggos, #page .frame-container{
     min-height: 50vw;
     margin: 1rem;
     padding: 1rem;
@@ -74,6 +81,18 @@ body{
 #page #about{
     margin-top: 3rem;
     margin-bottom: 3rem;
+}
+#page .frame{
+    height: 50vw;
+    width: 50vw;
+    margin: 1rem; 
+    background-color: white;
+
+}
+#page .frame .frame-img{
+    height: 40vw;
+    width: 50vw;
+    background-color: var(--gray);
 }
 
 /*---------- Header Style -----------*/
