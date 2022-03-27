@@ -83,12 +83,14 @@ function setupAddRemoveImage(){
     addImageButton = document.querySelectorAll(".add");
     console.log(addImageButton);
     frameContainer.addEventListener('click', function(event){
-        const promise = fetch(DOG_URL);
-    
-        console.log('here');
-        
+
         const ID = event.target.id;
-        console.log(ID);
+        const img = document.getElementById(`img-${ID}`);
+
+        img.style.backgroundImage = `url("../images/loading.gif")`;
+        
+        const promise = fetch(DOG_URL);
+            
         
         if (event.target.innerText  == "Add Image")
         {
@@ -98,12 +100,12 @@ function setupAddRemoveImage(){
                 return processing;
             })
             .then(function(processed){
-                const img = document.getElementById(`img-${ID}`);
+                // const img = document.getElementById(`img-${ID}`);
                 img.style.backgroundImage = `url(${processed.message})`
             });
         }
         else{
-            const img = document.getElementById(`img-${ID}`);
+            // const img = document.getElementById(`img-${ID}`);
             img.style.backgroundImage = `url("")`;            
         }
     });

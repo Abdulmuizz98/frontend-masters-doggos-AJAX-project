@@ -17,16 +17,19 @@ function AddDoggos(){
         img.alt = 'Dog Breed';
         img.className = "dog-image";
         frame.appendChild(img);
-
-        // appendImage(processedResponse);
     })
 }
 
-const addDogBtn = document.querySelector('.add-doggo');
-addDogBtn.addEventListener('click', AddDoggos);
+function ClearDoggos(){
+    for (let i = frame.childNodes.length - 1; i >= 0 ; i-- )
+        frame.removeChild(frame.childNodes[i]);
+}
 
-console.log('This would log first!');
+const addDogBtns = document.querySelectorAll('.add-doggo');
+addDogBtns.forEach((el) => el.addEventListener('click', AddDoggos));
 
+const clearDogsBtns = document.querySelectorAll('.clear-doggos');
+clearDogsBtns.forEach((el) => el.addEventListener('click', ClearDoggos));
 // function appendImage(imageResponse)
 // {
 //     const img = document.createElement('img');

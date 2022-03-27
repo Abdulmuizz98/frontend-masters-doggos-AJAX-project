@@ -143,6 +143,7 @@ body{
 
 #header h1 .icon-text{
     font-family: var(--icon-font);
+    color:darkblue;
 }
 #header nav{
     border-bottom: 2px solid var(--dark-gray);
