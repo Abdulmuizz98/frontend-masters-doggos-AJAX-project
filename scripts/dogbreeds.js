@@ -23,16 +23,11 @@ function populateDropdown() {
             option.innerText = breed;
             select.appendChild(option);
         }
-
-        // breedlist.forEach(function (item){
-        //     const breed = item;
-
-        // })
     })
 };
 
 function AddDoggos(){
-    const promise = fetch(DOG_URL);
+    const promise = fetch(`https://dog.ceo/api/breed/${select.value}/images/random`);
     
     promise
     .then(function(response){
