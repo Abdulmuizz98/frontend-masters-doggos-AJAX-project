@@ -1,52 +1,62 @@
-<!DOCTYPE html>
 <html lang="en-US">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="./styles/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Port+Lligat+Sans&family=Smooch+Sans&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="./styles/style.css">
-    <title>Doggos - HOME</title>
+    <title>Doggos - DOG-BREEDS</title>
 </head>
 <body>
-   <header id="header">
+    <header id="header">
         <nav class="nav-container">
             <h1><a href="#" class="icon-text"><i class="fas fa-dog"></i> Doggos <i class="fab fa-bone-break"></i></a></h1>
             
             <ul class="links-container">
-                <li class="active"><a  href="#">HOME</a></li>
+                <li><a href="./index.html">HOME</a></li>
                 <li><a href="./dogframes.html">FRAMES</a></li>
-                <li><a href="./dogbreeds.html">BREEDS</a></li>
-                <li><a href="#about">ABOUT</a></li>
+                <li class="active"><a href="./dogbreeds.html">BREEDS</a></li>
+                <li><a href="./index.html#about">ABOUT</a></li>
                 <li><a href="https://github.com/Abdulmuizz98" target="_blank">AUTHOR</a></li>
                 <li><a href="https://github.com/Abdulmuizz98/frontend-masters-doggos-AJAX-project.git" target="_blank">CONTRIBUTE</a></li>
             </ul>   
         </nav>
     </header>
     <main id="page">
-        <section id="doggos-playground">   
-            <h2>Dogs</h2>
-            <p>Feel free to add some dogs to your frame.</p>
-            <p>There you go!</p>
-            <button class="add-doggo btn">Add Doggos</button> 
-            <button class="clear-doggos btn">Clear Frame</button>    
-            
-            <div class="doggos">
-                
-            </div>
-            <button class="add-doggo btn">Add Doggos</button> 
-            <button class="clear-doggos btn">Clear Frame</button>    
-        </section>
+        <section>
+            <h2>Dog Breeds</h2>
+            <p>Howdy! I have a surprise for you.</p>
+            <p>Select a breed of your choice from the dropdown menu</p> 
+            <p>And guess what, we'd deliver a picture of your breed of choice to you.</p>
 
-        <section id="about">
-            <h2>About</h2>
-            <p>An hello world AJAX project inspired by the introduction to Web Development course by Brian Holt.</p>
-            <p>The webpage sends API requests to the dog.ceo API. An API that returns random pictures of dogs.</p>
+            <label for="dog-breeds">
+                Choose a breed:
+                <select id="dog-breeds" name="dog-breeds"> 
+                    <!-- <option value="">1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option value=selected>9</option>
+                    <option value="10">10</option> -->
+                </select>
+            </label>
+            <button class="add-doggo btn">Add Doggos</button> 
+            <button class="clear-doggos btn">Clear Frame</button>  
+                        
+            <div class="doggos">    
+            </div>
+
+            <button class="add-doggo btn">Add Doggos</button> 
+            <button class="clear-doggos btn">Clear Frame</button>  
         </section>
-            
+      
     </main>
     <footer id="footer">
         <ul class="links-container">
@@ -61,7 +71,7 @@
             <li><p>&COPY; Abdulmuizz Hamzat 2022</p></li>
         </ul>					
     </footer>
-    <script src="./scripts/doggos.js"></script>
+    <script src="./scripts/dogbreeds.js "></script>
     <script src="https://kit.fontawesome.com/1522e1f2b5.js" crossorigin="anonymous"></script>
 </body>
 </html>
