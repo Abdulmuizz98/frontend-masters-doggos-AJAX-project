@@ -27,19 +27,28 @@ function populateDropdown() {
 };
 
 function AddDoggos(){
-    const promise = fetch(`https://dog.ceo/api/breed/${select.value}/images/random`);
     
+    const img = document.createElement('img');
+    const promise = fetch(`https://dog.ceo/api/breed/${select.value}/images/random`);
+        
+    img.src = "../images/loading.gif";
+    img.alt = 'Loading';
+    img.className = "dog-image";
+    frame.appendChild(img);
+
+
     promise
     .then(function(response){
         const processingPromise = response.json();
         return processingPromise;
     })
     .then(function(processedResponse){
-        const img = document.createElement('img');
-        img.src = processedResponse.message;
-        img.alt = 'Dog Breed';
-        img.className = "dog-image";
-        frame.appendChild(img);
+        setTimeout( renderImage, 500);
+
+        function renderImage() {
+            img.src = processedResponse.message;
+            img.alt = 'Dog Breed';
+        } 
     })
 }
 
@@ -53,11 +62,3 @@ addDogBtns.forEach((el) => el.addEventListener('click', AddDoggos));
 
 const clearDogsBtns = document.querySelectorAll('.clear-doggos');
 clearDogsBtns.forEach((el) => el.addEventListener('click', ClearDoggos));
-// function appendImage(imageResponse)
-// {
-//     const img = document.createElement('img');
-//     img.src = imageResponse.message;
-//     img.alt = 'Dog Breed';
-//     img.className = "dog-image";
-//     frame.appendChild(img);
-// }
