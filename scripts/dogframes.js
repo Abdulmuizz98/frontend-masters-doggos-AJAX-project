@@ -1,21 +1,25 @@
+const DOG_URL = "https://dog.ceo/api/breeds/image/random";
+
 const frameContainer = document.querySelector('.frame-container');
-const frameAmountSelect = document.querySelector('.amt-to-generate');
+
+const frameAmountSelect = document.querySelector('.amt-to-generate'); // Input for number of frames
+
 const addFramesBtn = document.querySelector('.add-frames-btn');
 const clearFramesBtn = document.querySelector('.remove-frames-btn');
 
-var totalFrames = 0;
-
-//On click of the add frames btn, add frames. 
-addFramesBtn.addEventListener('click', addFrames);
+var totalFrames = 0; // Holds number of frames created in 0 based (used to generate frame ID).
 
 /** 
  * addFrames - adds Frames of a given amount to the frame container.
  * 
- * Return: doesn't return anything;
+ * Description: Adds frames of a given amount alongside add and 
+ *              remove image buttons for each. 
+ * 
+ * Return: Nothing;
  */
 function addFrames(){
     const frameAmount = parseInt(frameAmountSelect.value);
-
+    
     for(let i = totalFrames; i < (totalFrames + frameAmount); i++)
     {
         //Create frame and img
@@ -47,51 +51,37 @@ function addFrames(){
     }
     totalFrames += frameAmount;
     setupAddRemoveImage();
-
 }
 
-//On click of the clear frames btn, clear all frames. 
-clearFramesBtn.addEventListener('click', clearFrames);
-
 /** 
- * clearFrames - clears all Frames in the frame container.
+ * clearFrames - Clears all Frames in the frame container.
  * 
- * Return: doesn't return anything;
+ * Return: Nothing;
  */
 function clearFrames(){
     const frames = document.querySelectorAll(".frame");
 
     for (let i = 0; i < frames.length; i++)
         frameContainer.removeChild(frames[i]);  
-        //frames[i].style.display = 'none';
         
-        totalFrames = 0;
-    }
+    totalFrames = 0;
+}
     
-//Add and Remove image.
-
 /** 
- * setupAddImage - prepares the add image functionality when a frameset is added.
+ * setupAddRemoveImage - Prepares the add and remove image functionality when a frameset is added.
  * 
- * Return: doesn't return anything;
+ * Return: Nothing.
  */
-const DOG_URL = "https://dog.ceo/api/breeds/image/random";
-
-var addImageButton;
-
 function setupAddRemoveImage(){
-    addImageButton = document.querySelectorAll(".add");
-    console.log(addImageButton);
     frameContainer.addEventListener('click', function(event){
-
+        
         const ID = event.target.id;
         const img = document.getElementById(`img-${ID}`);
-
+        
         img.style.backgroundImage = `url("../images/loading.gif")`;
         
         const promise = fetch(DOG_URL);
-            
-        
+                    
         if (event.target.innerText  == "Add Image")
         {
             promise
@@ -100,14 +90,16 @@ function setupAddRemoveImage(){
                 return processing;
             })
             .then(function(processed){
-                // const img = document.getElementById(`img-${ID}`);
                 img.style.backgroundImage = `url(${processed.message})`
             });
         }
         else{
-            // const img = document.getElementById(`img-${ID}`);
             img.style.backgroundImage = `url("")`;            
         }
     });
 }
-
+        
+//On click of the add frames btn, add frames. 
+addFramesBtn.addEventListener('click', addFrames);
+//On click of the clear frames btn, clear all frames. 
+clearFramesBtn.addEventListener('click', clearFrames);

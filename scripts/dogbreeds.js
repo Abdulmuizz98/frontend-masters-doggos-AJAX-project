@@ -1,12 +1,18 @@
-const DOG_URL = "https://dog.ceo/api/breeds/image/random";
-const BREEDLIST_URL = "https://dog.ceo/api/breeds/list/all";
-
+const BREEDLIST_URL = "https://dog.ceo/api/breeds/list/all"; //Breeds API
 
 const frame = document.querySelector('.doggos');
-const select = document.getElementById('dog-breeds');
+const select = document.getElementById('dog-breeds'); //breeds dropdown
 
-document.addEventListener('focus', populateDropdown );
+const addDogBtns = document.querySelectorAll('.add-doggo');
+const clearDogsBtns = document.querySelectorAll('.clear-doggos');
 
+/*---------- Add and Clear Buttons functionality created and used. ---------*/
+
+/**
+ * populateDropdown - adds a random list of available breeds from the Breeds API to 'select'
+ * 
+ * Return: Nothing.
+ */
 function populateDropdown() {
     const promise = fetch(BREEDLIST_URL);
 
@@ -26,7 +32,12 @@ function populateDropdown() {
     })
 };
 
-function AddDoggos(){
+/**
+ * AddDoggo - adds a random breed image returned by the Breed API.
+ * 
+ * Return: Nothing.
+ */
+function AddDoggo(){
     
     const img = document.createElement('img');
     const promise = fetch(`https://dog.ceo/api/breed/${select.value}/images/random`);
@@ -52,13 +63,19 @@ function AddDoggos(){
     })
 }
 
+/**
+ * ClearDoggos - removes all dog images earlier rendered on the frame.
+ * 
+ * Return: Nothing.
+ */
 function ClearDoggos(){
     for (let i = frame.childNodes.length - 1; i >= 0 ; i-- )
         frame.removeChild(frame.childNodes[i]);
 }
 
-const addDogBtns = document.querySelectorAll('.add-doggo');
-addDogBtns.forEach((el) => el.addEventListener('click', AddDoggos));
+document.addEventListener('focus', populateDropdown ); //Add the breeds returned by API to <select></select>
 
-const clearDogsBtns = document.querySelectorAll('.clear-doggos');
+//Add the AddDoggo and ClearDoggos functionality to their respective buttons.
+
+addDogBtns.forEach((el) => el.addEventListener('click', AddDoggo));
 clearDogsBtns.forEach((el) => el.addEventListener('click', ClearDoggos));

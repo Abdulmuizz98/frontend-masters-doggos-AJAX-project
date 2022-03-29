@@ -1,9 +1,18 @@
-const DOG_URL = "https://dog.ceo/api/breeds/image/random";
+const DOG_URL = "https://dog.ceo/api/breeds/image/random"; //API link
 
-const frame = document.querySelector('.doggos');
+const frame = document.querySelector('.doggos'); 
+const addDogBtns = document.querySelectorAll('.add-doggo');
+const clearDogsBtns = document.querySelectorAll('.clear-doggos');
 
 
-function AddDoggos(){
+/*---------- Add and Clear Buttons functionality created and used. ---------*/
+
+/**
+ * AddDoggo - adds a random dog image returned by the DOG_URL.
+ * 
+ * Return: Nothing.
+ */
+function AddDoggo(){
     const promise = fetch(DOG_URL);
     
     promise
@@ -20,21 +29,17 @@ function AddDoggos(){
     })
 }
 
+/**
+ * ClearDoggos - removes all dog images earlier rendered on the frame.
+ * 
+ * Return: Nothing.
+ */
 function ClearDoggos(){
     for (let i = frame.childNodes.length - 1; i >= 0 ; i-- )
         frame.removeChild(frame.childNodes[i]);
 }
 
-const addDogBtns = document.querySelectorAll('.add-doggo');
-addDogBtns.forEach((el) => el.addEventListener('click', AddDoggos));
+//Add the AddDoggo and ClearDoggos functionality to their respective buttons.
 
-const clearDogsBtns = document.querySelectorAll('.clear-doggos');
+addDogBtns.forEach((el) => el.addEventListener('click', AddDoggo));
 clearDogsBtns.forEach((el) => el.addEventListener('click', ClearDoggos));
-// function appendImage(imageResponse)
-// {
-//     const img = document.createElement('img');
-//     img.src = imageResponse.message;
-//     img.alt = 'Dog Breed';
-//     img.className = "dog-image";
-//     frame.appendChild(img);
-// }
